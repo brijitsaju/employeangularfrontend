@@ -10,7 +10,7 @@ export class AdminapiService {
 
   constructor(private http:HttpClient) { }
 
-  server_URL = 'http://localhost:3015'
+  server_URL = 'https://employeeportal-backend.onrender.com'
 //create an object for the bevioursubject
   public shareData =new BehaviorSubject(false)
 
