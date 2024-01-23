@@ -1,0 +1,46 @@
+<div >
+  <div class="row">
+    <div class="col-lg-2  d-flex flex-column p-5" style="height: 720px; background-color:  #3e3e7a;">
+        <a routerLink="/dashboard" class="mb-3" style="text-decoration: none; color: #ed4f4f; font-size: 18px;"><i class="fa-solid fa-house me-2"></i>Dashboard</a>
+        <a  routerLink="/employees" style="text-decoration: none; color: white;font-size: 18px;"><i class="fa-solid fa-user me-2"></i>Employee List</a>
+  
+  
+    </div> 
+    <div class="col-lg-10">
+
+    <h1 class="mt-3 ms-3 text-center">Edit User Details</h1>
+    
+    
+
+    <div id="b4" style="margin-top:4%;border-radius: 10px; margin-left:27%;" class="border shadow p-5 w-50 h-50  ">
+
+        <input type="text" class="form-control mb-3" placeholder="User id" name="userid" [(ngModel)]="employee.id" required pattern="[0-9]" #employeeid="ngModel" disabled>
+        <span *ngIf="employeeid.invalid && employeeid.touched" class="text-danger">Invalid User Id</span>
+        <input type="text" class="form-control mb-3" placeholder="enter username" name="password"  [(ngModel)]="employee.name" required pattern="^[a-zA-Z]{3,}$" #employeename="ngModel" id=""  >
+
+        <span *ngIf="employeename.invalid && employeename.touched" class="text-danger">Invalid Username</span>
+        <input type="text" class="form-control mb-3" placeholder=" enter email" name="password"  [(ngModel)]="employee.email" required email #employeeemail="ngModel" id="" >
+        <span *ngIf="employeeemail.invalid && employeeemail.touched" class="text-danger">Invalid Email</span>
+        
+            
+        <div class="form-floating mb-3">
+          <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="empstatus" [(ngModel)]="employee.status" required #employeestatus="ngModel">
+              <option selected>Open this select menu</option>
+              <option value="1">Active</option>
+              <option value="2">Inactive</option>
+          </select>
+          <label for="floatingSelect">Status</label>
+      </div>
+
+
+        <button (click)="Cancelbutton(employee.id)" style="border-color: red;" class="btn btn-success  bg-danger">cancel</button>
+
+       
+        <button (click)="editEmployee(employee.id)" class="btn btn-success text-dark ms-5">Update</button>
+
+
+      </div>
+    
+
+
+</div>
